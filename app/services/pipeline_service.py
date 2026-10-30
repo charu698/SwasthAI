@@ -8,12 +8,10 @@ def analyze_prescription(image_path: str):
     ocr_text = extract_text(image_path)
 
     # Step 2: Gemini
-    medicines = explain_medicines(ocr_text)
-
     analysis = explain_medicines(ocr_text)
 
     return {
-    "ocr_text": ocr_text,
-    "summary": analysis["summary"],
-    "medicines": analysis["medicines"]
-}
+        "ocr_text": ocr_text,
+        "summary": analysis["summary"],
+        "medicines": analysis["medicines"]
+    }
